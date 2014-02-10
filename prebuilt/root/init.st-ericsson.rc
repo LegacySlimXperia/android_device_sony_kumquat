@@ -30,6 +30,10 @@ on init
     # setup the global environment
     export OMX_STE_ENS_COMPONENTS_DIR /system/lib/ste_omxcomponents/
     export OMX_BELLAGIO_LOADER_REGISTRY /system/etc/omxloaders
+    
+    #NANO Editor
+    export TERMINFO /system/etc/terminfo
+    export TERM linux
 
     mkdir /modemfs 0771 system system
 
