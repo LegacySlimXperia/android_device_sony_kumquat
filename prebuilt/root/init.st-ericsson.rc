@@ -358,6 +358,8 @@ on boot
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     
+    exec cg2900-channel_init.sh
+    
     start init_ste-cg2900
     
     start init_ste-cw1200
@@ -436,7 +438,7 @@ service admsrv /system/bin/admsrv
 
     
 # Initialize Bluetooth/FM/GPS chip
-service init_ste-cg2900 /system/bin/logwrapper /system/xbin/ste-cg29xx_ctrl -b 115200 -p 6 -l 23 -i /system/bin/cg2900-channel_init.sh /dev/ttyAMA0
+service init_ste-cg2900 /system/bin/hciattach -a 23 -n -s 115200 /dev/ttyAMA0 cg2900 115200 flow
     user bluetooth
     group bluetooth net_bt_admin system net_bt_stack
     disabled
