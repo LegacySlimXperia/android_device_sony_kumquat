@@ -105,8 +105,8 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 # Fmradio
-#PRODUCT_PACKAGES += \
-#    FmRadioReceiver
+PRODUCT_PACKAGES += \
+    FmRadioReceiver
 
 # b2r2lib
 PRODUCT_PACKAGES += \
