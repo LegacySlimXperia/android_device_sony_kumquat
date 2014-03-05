@@ -102,7 +102,6 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-    libsystem_server \
     com.android.future.usb.accessory
 
 # Fmradio
