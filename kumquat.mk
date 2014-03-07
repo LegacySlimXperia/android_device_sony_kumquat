@@ -245,7 +245,7 @@ PRODUCT_COPY_FILES += \
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/../../../vendor/cm/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+   vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
 
 # patched JB cn_binary needed for mobile network for CM10.2 only
 PRODUCT_COPY_FILES += \
@@ -271,14 +271,18 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+TARGET_BOOTANIMATION_NAME := vertical-480x854
+
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    sys.mem.max_hidden_apps=10 \
+    ro.device.cpu=St-Ericsson_Novathor_U8500 \
+    ro.device.gpu=Mali_400 \
+    ro.device.rear_cam=5MP \
+    ro.device.front_cam=1.3MP \
+    ro.device.screen_res=480x854_Pixels
+    sys.mem.max_hidden_apps=5 \
     persist.sys.usb.config=mtp \
     wifi.interface=wlan0 \
     ro.sf.lcd_density=240
-
-#512MB ram devices(https://source.android.com/devices/low-ram.html)
-PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.low_ram=true
